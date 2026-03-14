@@ -62,7 +62,6 @@ string lieAnswer[TOTAL_Q]= {
 
 
 bool sentinelIsTruthful[NUM_SENTINELS];
-bool questionUsed[TOTAL_Q];
 int sentinelOf[TOTAL_Q];
 
 int lives;
@@ -86,7 +85,6 @@ void printWelcome(){
     cout << "- You decide: Are they telling the truth?" << endl;
     cout << "WIN : 3 detections IN A ROW";
     cout << "LIVES: You have 3 lives. Wrong = Lose a life." << endl;
-    cout << "NOTE: No question will ever repeat, teehee! GOOD LUCK FELLAS!";
     cout << "===================================================================" << endl;
     cout << endl;
 };
@@ -135,9 +133,6 @@ void randomizeRoles(){
 
 void initGame(){
     randomizeRoles();
-    for (int i = 0; i < TOTAL_Q; i++){
-        questionUsed[i] = false;
-    }
 
     lives = MAX_LIVES;
     streak = 0;
@@ -155,7 +150,21 @@ int questionsLeftForSentinel(int sentinelIndex){
     return count;
 }
 
+int pickQuestion(int sentinelIndex)
 
+int main(){
+    srand(time(0));
+    printWelcome();
+    initGame();
+
+    bool gameOver = false;
+
+    while (!gameOver){
+
+        // code
+    }
+    return 0;
+}
 
 
 
