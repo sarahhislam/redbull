@@ -180,6 +180,32 @@ int getValidSentinelChoice(){
     return choice - 1;
 }
 
+bool getYesNo(){
+    string input = "";
+    bool valid = false;
+    bool answer = false;
+
+    while (!valid){
+        cout << "Do you think the sentinel is telling the truth? (Yes/No): ";
+        cin >> input;
+
+        // make sure to enter everything in lower case;
+
+        if (input == "yes" || input == "y"){
+            answer = true;
+            valid = true;
+        }
+        else if(input == "no" || input == "n"){
+            answer = false;
+            valid = true;
+        }
+        else{
+            cout << "Invalid input! Please type Yes or No" << endl;
+        }
+    }
+
+    return answer;
+}
 
 
 int main(){
