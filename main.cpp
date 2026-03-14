@@ -145,8 +145,42 @@ void initGame(){
 }
 
 int pickQuestion(int sentinelIndex){
-    vector<int>available
+    vector<int>available;
+    for (int i = 0; i < TOTAL_Q; i++){
+        if(sentinelOf[i] == sentinelIndex){
+            available.push_back(i);
+        }
+    }
+
+    int pick = rand() % available.size();
+    return available[pick];
 }
+
+int getValidSentinelChoice(){
+    int choice = 0;
+    bool valid = false;
+
+    while(!valid){
+        cout << "Choose a sentinel to question (1-" << NUM_SENTINELS << "):";
+
+        if (cin >> choice){
+            if (choice >= 1 && choice <= NUM_SENTINELS){
+                valid = true;
+            }
+            else{
+                cout << "Out of bounds! Enter a number between 1 and " << NUM_SENTINELS << "." << endl;
+            }
+        } else{
+            cout << "Invalid input! Please enter a whole number." << endl;
+
+            cin.clear();
+        }
+    }
+
+    return choice - 1;
+}
+
+
 
 int main(){
     srand(time(0));
