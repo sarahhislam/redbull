@@ -116,6 +116,23 @@ void printStatus(bool won){
         } 
 }
 
+void printStatus(bool won, string message){
+    printStatus(won);
+    cout << " Note:" << message << endl;
+    cout << "=============================" << endl;
+
+}
+
+void randomizeRoles(){
+    for (int i = 0; i < NUM_SENTINELS; i++){
+        if (rand() % 2 == 0){
+            sentinelIsTruthful[i] = true;
+        } else {
+            sentinelIsTruthful[i] = false;
+        }
+    }
+}
+
 
 
 
