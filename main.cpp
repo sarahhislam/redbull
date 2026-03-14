@@ -132,6 +132,7 @@ void randomizeRoles(){
 }
 
 void initGame(){
+
     for(int i = 0; i < TOTAL_Q; i++){
         sentinelOf[i] = i / 2;
     }
@@ -228,8 +229,8 @@ int runOneTurn(int sentinelIndex){
     bool playerSaysTruth = getYesNo();
 
     if(playerSaysTruth == sentinelIsTruthful[sentinelIndex]){
-        return 1
-    } else{
+        return 1;
+    } else {
         return 0;
     }
 }
@@ -243,20 +244,47 @@ int main(){
     bool gameOver = false;
 
     while (!gameOver){
+        printStatus();
 
-        // code
+        int sentinelIndex = getValidSentinelChoice();
+
+        int result = runOneTurn(sentinelIndex);
+        switch(result){
+            case 1:
+            if (streak > bestStreak){
+                bestStreak = streak;
+            }
+            cout << "You detected correctly" << endl;
+            cout << "Streak: " << streak << "/" << WIN_STREAK << endl;
+
+            if(streak == WIN_STREAK){
+                printStatus(true);
+                gameOver = true;
+            }
+
+            break;
+
+            case 0:
+            cout << "Wrong detection! You lose a life" << endl;
+            lives--;
+            streak = 0;
+
+            randomizeRoles();
+
+            cout << " Sentinel roles have been reshuffled! " << endl;
+            if(lives == 0){
+                printStatus(false);
+                gameOver = true;
+            }
+
+            break;
+
+        }
     }
+
     return 0;
 }
 
 
 
 
-
-
-
-void initGame(){
-    for (int i = 0; i < TOTAL_Q; i++){
-        sentinelOf[i] = i /2 ;
-    } // declare the  sentinelOf 
-};
