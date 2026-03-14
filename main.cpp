@@ -132,6 +132,10 @@ void randomizeRoles(){
 }
 
 void initGame(){
+    for(int i = 0; i < TOTAL_Q; i++){
+        sentinelOf[i] = i / 2;
+    }
+
     randomizeRoles();
 
     lives = MAX_LIVES;
@@ -140,17 +144,9 @@ void initGame(){
     bestStreak = 0;
 }
 
-int questionsLeftForSentinel(int sentinelIndex){
-    int count = 0;
-    for(int i = 0; i < TOTAL_Q; i++){
-        if(sentinelOf[i] == sentinelIndex && !questionUsed[i]){
-            count++;
-        }
-    }
-    return count;
+int pickQuestion(int sentinelIndex){
+    vector<int>available
 }
-
-int pickQuestion(int sentinelIndex)
 
 int main(){
     srand(time(0));
