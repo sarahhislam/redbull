@@ -95,10 +95,32 @@ void printStatus(){
     cout << endl;
     printDivider();
     cout << "Lives: " << lives << "/" << MAX_LIVES << endl;
-    cout << "Streak: " << streak << "/" << endl;
-    
-
+    cout << "Streak: " << streak << "/" << WIN_STREAK << endl;
+    cout << "Questions remaining: " << (TOTAL_Q - totalAsked) << endl;
+    printDivider();
+    cout << endl;
 };
+
+void printStatus(bool won){
+    cout << endl;
+    cout << "==================================================================="<< endl;
+    if (won){
+        cout << "YOU WIN! 3 correct detections in a row!" << endl;
+        cout << "GAME OVER - no lives remaining teehee" << endl;
+        cout << "================================================================";
+        cout << "Total Questions Asked: " << totalAsked << endl; //use iomanip library
+        cout << "Best streak reached : " << bestStreak << endl; //use iomanip library
+        cout << "Lives Remaining: " << lives << endl;
+        cout << "================================================================" << endl;
+
+        } 
+}
+
+
+
+
+
+
 
 
 
