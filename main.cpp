@@ -207,6 +207,33 @@ bool getYesNo(){
     return answer;
 }
 
+int runOneTurn(int sentinelIndex){
+    int qIndex = pickQuestion(sentinelIndex);
+    totalAsked++;
+
+    string response = "";
+
+    cout << endl;
+    cout << "You asked the sentinel" << (sentinelIndex +1) << ": " << questionText[qIndex] << endl;
+
+    if(sentinelIsTruthful[sentinelIndex]){
+        response = truthAnswer[qIndex];
+    } else{
+        response = lieAnswer[qIndex];
+    }
+
+    cout << "The sentinel responds: " << response << endl;
+    cout << endl;
+
+    bool playerSaysTruth = getYesNo();
+
+    if(playerSaysTruth == sentinelIsTruthful[sentinelIndex]){
+        return 1
+    } else{
+        return 0;
+    }
+}
+
 
 int main(){
     srand(time(0));
