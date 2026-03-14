@@ -133,6 +133,25 @@ void randomizeRoles(){
     }
 }
 
+void initGame(){
+    randomizeRoles();
+    for (int i = 0; i < TOTAL_Q; i++){
+        questionUsed[i] = false;
+    }
+
+    lives = MAX_LIVES;
+    streak = 0;
+    totalAsked = 0;
+    bestStreak = 0;
+}
+
+int questionsLeftForSentinel(int sentinelIndex){
+    int count = 0;
+    for(int i = 0; i < TOTAL_Q; i++){
+        if
+    }
+}
+
 
 
 
