@@ -148,8 +148,11 @@ void initGame(){
 int questionsLeftForSentinel(int sentinelIndex){
     int count = 0;
     for(int i = 0; i < TOTAL_Q; i++){
-        if
+        if(sentinelOf[i] == sentinelIndex && !questionUsed[i]){
+            count++;
+        }
     }
+    return count;
 }
 
 
