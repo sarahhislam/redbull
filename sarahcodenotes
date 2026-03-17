@@ -1,0 +1,73 @@
+*go line by line and add in comments for the code
+    *help team understand said code
+*typed out way on how code goes through, debug as well
+*reformat to make the format more understandable
+*indepth comments in sarah style
+
+
+*Aywisha and Vanessa are front end:
+    *Make this thing look gorgina
+
+
+1. 💾 PERSISTENCE (The Vault): 
+   We use <fstream> to talk to "squad_vault.txt". This isn't just for show—it saves 
+   your Diamonds, Max Streak, and Unlocks between runs. If you close the game and 
+   reopen it, your progress stays. This turns a simple script into a real game.
+
+2. 🧠 THE DATA ARCHITECTURE:
+   Everything is built on "Parallel Arrays." The Teammate names, their 5 questions, 
+   their Truths, and their Lies all share the same index [0-7]. When the RNG picks 
+   Index 3, the game knows it's talking to Luke, uses Luke’s trivia, and checks 
+   Luke’s specific answers.
+
+3. 💢 MOOD & MOOD-FILTERING:
+   We added a `mood[]` array. Every time a player gets a question wrong for a specific 
+   teammate, that teammate's "Frustration" goes up. If it hits 3, they get locked out 
+   of the randomizer. It forces the player to be careful and adds a "social" layer 
+   to the mechanics.
+
+4. 💎 THE DIAMOND ECONOMY:
+   - Session Diamonds: Earned via correct answers + Combo Multipliers (talking to 
+     the same person repeatedly builds "loyalty" rewards).
+   - Permanent Diamonds: Saved to the vault to buy HP upgrades in the Professor's 
+     Office before the mission starts.
+
+5. 🎓 THE PROFESSOR (Boss & Redemption):
+   The Professor acts as two different states:
+   - Redemption: A fail-safe. If you lose a life, you get one chance to answer a 
+     hard-coded Prof question to save yourself.
+   - Boss Mode: If you're brave enough to hit a 10-streak, you enter "The Lecture." 
+     You have to pass 3 questions in a row to win the massive 50-diamond jackpot.
+
+6. 💊 SPECIALIST SYNERGY:
+   If you hit 100% Mastery with Vanessa (The Nurse), the code flips a boolean 
+   flag in the save file. This permanently grants the +1 Life "Nurse Passive" to 
+   EVERY class you pick in the future. It’s our version of an "Achievement Unlock."
+
+7. 🛠️ CLEAN LOGIC:
+   We use normalize() to kill case-sensitivity (so "YES" = "yes") and clean() 
+   to wipe the input buffer. This prevents the "ghost input" bug where the 
+   program skips questions.
+   Teammate,Specialty/Lore Focus,🏆 Mastery Unlock (Permanent),💢 Mood Trigger
+Sarah,F1 Racing & Mechanical Skills,Nitro Boost: Earn +1 extra diamond per correct answer.,Low tolerance for F1 misinformation.
+Maha,Career Goals (Pilot) & Tennis,Clear Skies: Professor Ultimatum questions are 20% easier.,"Frustrated by ""2026"" grad year claims."
+Ayeisha,"Design, Linux, & Literature","Open Source: One random ""Rumor"" hint guaranteed every 5 turns.",Hates being called a Windows user.
+Luke,Automotive & Elden Ring,Boss Slayer: Final Lecture requires 2 answers instead of 3.,Frustrated if you get his gym split wrong.
+Vanessa,Nursing & Animal Care,Medical Synergy: +1 Starting Life permanently (All Classes).,"Annoyed by "" overseas travel"" lies."
+Juveria,Farming (Chicks) & Superpowers,Teleport: Option to skip one teammate once per run.,Hates baking misinformation.
+Stephanie,Shrek 2 Lore & Traveling,Ogre Shield: First mistake in a run doesn't break your streak.,Frustrated by Shrek 2 watch-count errors.
+Silvi,Horror Movies & Cat Lore,Sixth Sense: Lie detection ability recharges faster.,"Annoyed by ""Comedy"" genre claims.
+"PRO-TIPS FOR THE TEAM
+The "Loyalty" Play: Keep talking to the same person! The Combo Multiplier (x2 diamonds) kicks in at a 3x combo. It’s the fastest way to get rich and buy upgrades.
+
+The "Nurse" Priority: Master Vanessa first. Having that permanent extra life makes pushing for the 10-streak "Professor's Lecture" much safer.
+
+Mood Management: If you see someone's mood hitting 2, stop talking to them! If they hit 3, they are locked for the rest of the session, and you lose access to their potential Mastery rewards.
+
+The Vault Strategy: Don't spend all your diamonds in the mid-game shop. Save them for the Professor's Office (Pre-Game) to buy permanent HP. It’s better to start with 5 lives than to buy one mid-run.Roll for Teammate: The game checks who isn't frustrated (Mood < 3).
+
+Roll for Deception: A random number decides if the statement is a Truth or a Lie.
+
+Cross-Reference: If "Lie" is rolled, the game pulls from the wrongAnswers array. If "Truth," it pulls from trueAnswers.
+
+Verdict Check: The code compares your "yes/no" against the "Lie/Truth" state.
