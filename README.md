@@ -172,4 +172,8 @@ git add .
 git commit -m "Clear message about changes"
 git push
 
+How to run code from terminal in VScode?
+g++ {filename} -o {a name for your executable}
+./{the name for your executable}
+
 That’s it.
