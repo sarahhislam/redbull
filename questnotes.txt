@@ -71,3 +71,11 @@ Roll for Deception: A random number decides if the statement is a Truth or a Lie
 Cross-Reference: If "Lie" is rolled, the game pulls from the wrongAnswers array. If "Truth," it pulls from trueAnswers.
 
 Verdict Check: The code compares your "yes/no" against the "Lie/Truth" state.
+
+Tasks:
+
+- Add a log of players lives and streak
+- print out the instructions, display log
+- add a homepage: "are you ready to enter the labyrinth"
+- Add in art for all players
+- Make sure we have right questions for all team members

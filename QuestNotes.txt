@@ -70,7 +70,7 @@ Roll for Deception: A random number decides if the statement is a Truth or a Lie
 
 Cross-Reference: If "Lie" is rolled, the game pulls from the wrongAnswers array. If "Truth," it pulls from trueAnswers.
 
-Verdict Check: The code compares your "yes/no" against the "Lie/Truth" state.\\
+Verdict Check: The code compares your "yes/no" against the "Lie/Truth" state.
 
 Tasks:
 
