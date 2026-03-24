@@ -87,8 +87,7 @@ Creates and switches to a new branch.
 WHEN TO USE:
 When starting a new feature or testing something separate from main.
 
-8️⃣ SWITCH BRANCHES
-
+of⃣ SWITCH BRANCHES
 COPY & PASTE:
 git checkout main
 
