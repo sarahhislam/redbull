@@ -1,4 +1,4 @@
-1️⃣ CHECK WHAT CHANGED
+t1️⃣ CHECK WHAT CHANGED
 
 COPY & PASTE:
 git status
@@ -140,6 +140,10 @@ Push after finishing.
 
 To add everything:
 
+git status
+git pull
+
+
 git add .
 
 Or add one file:
@@ -165,14 +169,28 @@ After that, every time just use:
 git push
 🔥 The 3 Commands You Actually Need Most
 
+
+
+
 When you're done working, just do:
 
-git add .
-git commit -m "Clear message about changes"
+git add . 
+
+git commit -m "Clear message about changes"git add .
+
 git push
 
+
+That’s it.
+
+
+
+
+
+
+
+
+HOW TO PULL THIS PROGRAM IN VSCODE:
 How to run code from terminal in VScode?
 g++ {filename} -o {a name for your executable}
 ./{the name for your executable}
-
-That’s it.

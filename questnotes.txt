@@ -78,4 +78,4 @@ Tasks:
 - print out the instructions, display log
 - add a homepage: "are you ready to enter the labyrinth"
 - Add in art for all players
-- Make sure we have right questions for all team members
+- Make sure we have right q. estions for all team members
